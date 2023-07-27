@@ -1,5 +1,6 @@
 # modularization
 Implementation of a statistical test for functional modularizations of networks
+
 Published in: "Correlations reveal the hierarchical organization of networks with latent binary variables" (2023) Stefan Häusler
 
 MATLAB (R2015a)
