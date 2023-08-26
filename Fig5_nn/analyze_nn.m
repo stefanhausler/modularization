@@ -3,7 +3,7 @@
 % Reproduces the results shown in Fig. 5 discussed in the section "Inferring nested modularizations in neural networks" in
 % "Correlations reveal the hierarchical organization of networks with latent binary variables" (2023) Stefan Häusler
 
-% Runtime on an Intel(R) Xeon(R) CPU E5-2680 v4 @ 2.40GHz (28 cores):  < 380 sec execution time and < 3 GB memory
+% Runtime on an Intel(R) Xeon(R) CPU E5-2680 v4 @ 2.40GHz (28 cores):  < 40 sec execution time and < 1 GB memory
 %
 % (c) 2023 Stefan Häusler
 % This code is licensed under BSD-3-Clause license (see LICENSE for details)
