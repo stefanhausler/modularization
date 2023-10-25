@@ -13,4 +13,4 @@ For information on how to use the toolbox, see example.m.
 Code to reproduce the results shown in Figures 3, 4 and 5 is available in 'Fig3_grn', 'Fig4_pc' and 'Fig5_nn'.
 
 Copyright (c) 2023, Stefan Häusler, All rights reserved
-The code in all directories and subdirectories is licensed under BSD-3-Clause license (see LICENSE for details)
+The code in all directories and subdirectories except Fig3_grn/dream5 is licensed under BSD-3-Clause license (see LICENSE for details)
