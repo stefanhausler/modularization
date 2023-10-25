@@ -16,7 +16,6 @@ function [x,info] = get_grn_data(NETWORK,path_dream5)
 % (c) 2023 Stefan Häusler
 % This code is licensed under BSD-3-Clause license (see LICENSE for details)
 
-
 info = [];
 
 st = dbstack;
@@ -25,12 +24,17 @@ datapath = fileparts(which(st(1).name));
 if exist(sprintf('%s/dataset%d.mat',datapath,NETWORK))
     load(sprintf('%s/dataset%d.mat',datapath,NETWORK))
 else
+    disp('Data conversion: Please be patient, this step is only required once.')
     
     % Network1: In silico / 4012 interactions
     % Network2: S. aureus (not used for scoring) / 5018 interactions
     % Network3: E. coli / 2066 interactions
     % Network4: S. cerevisiae / 3940 interactions
     datasets = {'Network1','Network2','Network3','Network4'};
+
+    if ~exist(sprintf('%s/%s/input_data/net%d_expression_data.csv',path_dream5,datasets{NETWORK},NETWORK))
+       unzip(sprintf('%s/%s/input_data/net%d_expression_data.zip',path_dream5,datasets{NETWORK},NETWORK),sprintf('%s/%s/input_data',path_dream5,datasets{NETWORK}));
+    end
     
     tb = readtable( sprintf('%s/%s/input_data/net%d_expression_data.csv',path_dream5,datasets{NETWORK},NETWORK),'delimiter','tab');
     tf = readtable( sprintf('%s/%s/input_data/net%d_transcription_factors.csv',path_dream5,datasets{NETWORK},NETWORK),'delimiter','tab','ReadVariableNames',0);
@@ -43,7 +47,7 @@ else
     
     gsidx = zeros(size(gs,1),3);
     for i = 1:size(gs,1)
-        fprintf('%g               \r', i/size(gs,1))
+        fprintf('%g%%               \r', 100*i/size(gs,1))
         gsidx(i,1) = str2num(gs{i,1}{1}(2:end));
         gsidx(i,2) = str2num(gs{i,2}{1}(2:end));
         gsidx(i,3) = gs{i,3};
