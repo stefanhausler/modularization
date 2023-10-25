@@ -1,7 +1,8 @@
 # modularization
 Implementation of a statistical test for functional modularizations of networks
 
-Published in: 
+Published in:
+
 Häusler, Stefan. "Correlations reveal the hierarchical organization of networks with latent binary variables." bioRxiv (2023): 2023-07.
 https://doi.org/10.1101/2023.07.27.550891
 
