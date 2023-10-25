@@ -1,11 +1,12 @@
 function [p,T,zeta] = get_T(stat,idx,par)
 % GET_T  Test statistic for modularization.
-%    [P,T,ZETA] = GET_T(STAT,IDX,PAR) for moment ratio matrix and covariance matrix in STAT (obtained from GET_B), concise
-%    index sets IDX (obtained from GET_IDX) and correction par.METHOD return
+%    [P,T,ZETA,DF] = GET_T(STAT,IDX,PAR) for moment ratio matrix and covariance matrix in STAT (obtained from GET_B),
+%    concise index sets IDX (obtained from GET_IDX) and correction par.METHOD returns
 %
 %       P             p-pvalue for the modularization corresponding to the concise index sets IDX
 %       T             test statistic for the modularization corresponding to the concise index sets IDX
 %       ZETA          shape parameter of the associated gamma distribution
+%       DF            degrees of freedom
 %
 %    PAR.METHOD determines the implemented correction.
 %
@@ -81,6 +82,7 @@ function [p,T,zeta] = get_T(stat,idx,par)
        zeta = 1/2*sum(sum(idx~=0) - 1);  % shape parameter of the associated gamma distribution
        T = 1/2*sum(te);                  % test statistic
        logit = T - zeta;
+       DF = 2*zeta;                      % degrees of freedom
        
        p = gammainc(max(T,0),zeta,'upper'); % max to prevent numeric problems
 
