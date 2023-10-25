@@ -6,13 +6,9 @@ https://doi.org/10.1101/2023.07.27.550891
 
 MATLAB (R2015a)
 
-See example.m for how to use the statistical test toolbox.
+For information on how to use the toolbox, see example.m.
 
-The code to reproduce the results shown in Figures 4 and 5 in 'Inferring flat modularizations in dendrites of pyramidal neurons' 
-and 'Inferring nested modularizations in neural networks' is available in the directories 'Fig4_pc' and 'Fig5_nn'.
-
-The code to reproduce the results shown in Figure 3 in 'Inferring functional modules in gene regulatory networks' 
-is expected to be available in September 2023.
+Code to reproduce the results shown in Figures 3, 4 and 5 is available in 'Fig3_grn', 'Fig4_pc' and 'Fig5_nn'.
 
 Copyright (c) 2023, Stefan Häusler, All rights reserved
 The code in all directories and subdirectories is licensed under BSD-3-Clause license (see LICENSE for details)
